@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block 'titulo' %} Cadastro {% endblock %}
+
+{% block 'conteudo' %}
+
+<div class="form-group col-md-6 offset-md-3 col py-2 px-md-3" align="center">
+    <h2> Cadastro </h2>
+</div>
+
+<div class="col-md-6 offset-md-3 border bg-light">
+    <form class="col py-3 px-md-5" method="POST" action="{% url 'valida_cadastro' %}"> {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="inputName">Nome Completo</label>
+            <input name="nome" type="text" class="form-control" id="inputName">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input name="email" type="email" class="form-control" id="inputEmail4">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputSenha">Senha</label>
+            <input name="senha" type="password" class="form-control" id="inputSenha">
+          </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputFone">Telefone</label>
+              <input name="telefone" type="number" class="form-control" id="inputFone">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputWpp">Whatsapp</label>
+              <input name="whatsapp" type="number" class="form-control" id="inputWpp">
+            </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="inputAddress2">Endereço</label>
+          <input name="endereco" type="text" class="form-control" id="inputAddress2" >
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">Cidade</label>
+            <input name="cidade" type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputEstado">Estado</label>
+            <select name="estado" id="inputEstado" class="form-control">
+              <option selected>Escolher...</option>
+              <option>Maranhão</option>
+              
+            </select>
+          </div>          
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
+
+    </form>
+    </div>
+
+
+{% endblock %}
